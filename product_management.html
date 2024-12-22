@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Sản Phẩm</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div id="navbar"></div>
+
+    <div class="container mt-4">
+        <h1>Quản Lý Sản Phẩm</h1>
+
+        <!-- Action Buttons -->
+        <div class="row mt-4">
+            <div class="col-md-8">
+                <div class="input-group">
+                    <select class="form-select" style="max-width: 180px;" id="shopSelect">
+                        <option value="all">Tất cả Shop</option>
+                        <option value="Lonatech Store">Lonatech Store</option>
+                        <option value="TechZone Store">TechZone Store</option>
+                    </select>
+                    <input type="text" class="form-control" placeholder="Item ID">
+                    <input type="text" class="form-control" placeholder="Tên sản phẩm">
+                    <button class="btn btn-primary">Tìm kiếm</button>
+                </div>
+            </div>
+            <div class="col-md-4 text-end">
+                <button class="btn btn-danger me-2" id="deleteButton" style="display: none;">
+                    <i class="bi bi-trash"></i> Xóa
+                </button>
+                <button class="btn btn-success">
+                    <i class="bi bi-arrow-repeat"></i> Đồng bộ
+                </button>
+            </div>
+        </div>
+
+        <!-- Products Table -->
+        <div class="table-responsive mt-4">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th><input type="checkbox"></th>
+                        <th>Ảnh</th>
+                        <th>Item id</th>
+                        <th>Sản phẩm</th>
+                        <th>Giá bán</th>
+                        <th>SL</th>
+                        <th>Sản phẩm</th>
+                        <th>Giá bán</th>
+                        <th>Tồn</th>
+                        <th>Trạng thái</th>
+                    </tr>
+                </thead>
+                <tbody id="productTableBody">
+                    <!-- Lonatech Store Products -->
+                    <tr data-shop="Lonatech Store">
+                        <td><input type="checkbox"></td>
+                        <td><img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-ly4w8urcwpsx9f@resize_w900_nl.webp" width="50" height="50"></td>
+                        <td>rc192i - trang<br>16695386803<br>(186899938540)<br><strong>(Lonatech Store)</strong></td>
+                        <td>Cáp sạc nhanh Remax RC-192i chuẩn PD 20W Max đầu cáp gập 90 độ chuyên game công ai phôn tích hợp đèn led - Trắng</td>
+                        <td>59.000</td>
+                        <td>1</td>
+                        <td>(rc192i)<br>Cáp sạc Remax C to Lightning RC 192i</td>
+                        <td>59.000</td>
+                        <td>5</td>
+                        <td><span class="text-success">✓</span></td>
+                    </tr>
+                    <tr data-shop="Lonatech Store">
+                        <td><input type="checkbox"></td>
+                        <td><img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lziu5uupkzoh5b.webp" width="50" height="50"></td>
+                        <td>a2637 - A2637-xanh<br>21490870038<br>(493291833340)<br><strong>(Lonatech Store)</strong></td>
+                        <td>Củ sạc Anker A2637 Nano Pro 20w sạc nhanh các thiết bị di động PD/IQ 3.0 - Xanh dương 99%</td>
+                        <td>189.000</td>
+                        <td>1</td>
+                        <td>(A2637-BU)<br>Củ sạc Anker 20w a2637 - Xanh dương</td>
+                        <td>189.000</td>
+                        <td>-</td>
+                        <td><span class="text-success">✓</span></td>
+                    </tr>
+
+                    <!-- TechZone Store Products -->
+                    <tr data-shop="TechZone Store">
+                        <td><input type="checkbox"></td>
+                        <td><img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lyv0abet52kted@resize_w900_nl.webp" width="50" height="50"></td>
+                        <td>sp35w - den<br>18795386804<br>(286899938541)<br><strong>(TechZone Store)</strong></td>
+                        <td>Sạc nhanh Samsung 35W USB-C Super Fast Charging 2.0 EP-TA800 Chính Hãng - Đen</td>
+                        <td>290.000</td>
+                        <td>1</td>
+                        <td>(SP35W-BK)<br>Adapter Samsung 35W EP-TA800</td>
+                        <td>290.000</td>
+                        <td>8</td>
+                        <td><span class="text-success">✓</span></td>
+                    </tr>
+                    <tr data-shop="TechZone Store">
+                        <td><input type="checkbox"></td>
+                        <td><img src="https://down-vn.img.susercontent.com/file/vn-11134207-7ras8-m3ugn9dex3c109.webp" width="50" height="50"></td>
+                        <td>pd65w - trang<br>19890870039<br>(593291833341)<br><strong>(TechZone Store)</strong></td>
+                        <td>Củ sạc USB-C Power Delivery 65W Gan Tech - Trắng</td>
+                        <td>450.000</td>
+                        <td>1</td>
+                        <td>(PD65W-WH)<br>Củ sạc Gan Tech 65W - Trắng</td>
+                        <td>450.000</td>
+                        <td>3</td>
+                        <td><span class="text-success">✓</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('shopSelect').addEventListener('change', function() {
+            const selectedShop = this.value;
+            const rows = document.querySelectorAll('#productTableBody tr');
+            
+            rows.forEach(row => {
+                if (selectedShop === 'all' || row.getAttribute('data-shop') === selectedShop) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        });
+
+        // Handle checkbox selection
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        const deleteButton = document.getElementById('deleteButton');
+        const mainCheckbox = document.querySelector('thead input[type="checkbox"]');
+
+        // Listen to changes on the main checkbox
+        mainCheckbox.addEventListener('change', function() {
+            const isChecked = this.checked;
+            checkboxes.forEach(checkbox => {
+                if (checkbox !== mainCheckbox) {
+                    checkbox.checked = isChecked;
+                }
+            });
+            updateDeleteButton();
+        });
+
+        // Listen to changes on individual checkboxes
+        checkboxes.forEach(checkbox => {
+            if (checkbox !== mainCheckbox) {
+                checkbox.addEventListener('change', updateDeleteButton);
+            }
+        });
+
+        function updateDeleteButton() {
+            const checkedBoxes = Array.from(checkboxes)
+                .filter(checkbox => checkbox !== mainCheckbox && checkbox.checked);
+            deleteButton.style.display = checkedBoxes.length > 0 ? 'inline-block' : 'none';
+        }
+
+        // Load navbar
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar').innerHTML = data;
+            });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
