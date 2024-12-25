@@ -10,11 +10,161 @@
     <div id="navbar"></div>
 
     <div class="container mt-4">
-        <h1>Báo Cáo Tài Chính</h1>
+        <div class="d-flex align-items-center mb-4">
+            <img src="shopee-icon.png" alt="" class="me-2" style="width: 24px;">
+            <h2 class="mb-0">Báo cáo tài chính sàn Shopee</h2>
+        </div>
+
+        <!-- Filter Section -->
+        <div class="d-flex gap-2 mb-4">
+            <select class="form-select" style="width: 150px;">
+                <option>Theo ngày tạo</option>
+            </select>
+            <select class="form-select" style="width: 150px;">
+                <option>Gian hàng</option>
+            </select>
+            <input type="date" class="form-control" style="width: 150px;">
+            <input type="date" class="form-control" style="width: 150px;">
+            <button class="btn btn-success">Lọc</button>
+        </div>
+
+        <!-- Summary Cards -->
+        <div class="row mb-4">
+            <!-- Đơn hàng Card -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Đơn hàng</h5>
+                        <div class="mt-3">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Đơn đặt</span>
+                                <div>
+                                    <span class="text-primary">177</span>
+                                    <span class="ms-2">29.557.900</span>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Đơn hoàn hủy</span>
+                                <div>
+                                    <span class="text-danger">(11.3%) 20</span>
+                                    <span class="ms-2 text-danger">3.793.000</span>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Đơn đặt - hoàn hủy</span>
+                                <div>
+                                    <span class="text-secondary">(88.7%) 157</span>
+                                    <span class="ms-2">25.764.900</span>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Đơn thành công</span>
+                                <div>
+                                    <span class="text-secondary">(40.7%) 72</span>
+                                    <span class="ms-2 text-success">12.252.900</span>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <span>Trả hàng hoàn tiền</span>
+                                <div>
+                                    <span class="text-secondary">(0%) 0</span>
+                                    <span class="ms-2">0</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Doanh thu Card -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Doanh thu</h5>
+                        <div class="mt-3">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Đơn đặt - hoàn hủy</span>
+                                <span class="text-success">25.764.900</span>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Shopee trợ giá</span>
+                                <span>0</span>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Chi phí</span>
+                                <div>
+                                    <span class="text-danger">45.1%</span>
+                                    <span class="ms-2 text-danger">11.610.069</span>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <span>Lợi nhuận</span>
+                                <div>
+                                    <span class="text-success">54.9%</span>
+                                    <span class="ms-2 text-success">14.154.831</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chi phí Card -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Chi phí</h5>
+                        <div class="mt-3">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Giá vốn</span>
+                                <div>
+                                    <span>36.1%</span>
+                                    <span class="ms-2">9.298.276</span>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Quảng cáo</span>
+                                <div>
+                                    <span>0%</span>
+                                    <span class="ms-2">0</span>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Phí trả sàn</span>
+                                <div>
+                                    <span>9%</span>
+                                    <span class="ms-2">2.311.793</span>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Trợ giá VC + Chênh lệch VC</span>
+                                <div>
+                                    <span>0%</span>
+                                    <span class="ms-2">0</span>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <span>Voucher của Shop</span>
+                                <span>616.100</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chart Section -->
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">So sánh cùng kỳ</h5>
+                <div class="chart-container" style="height: 400px;">
+                    <!-- Add your chart library implementation here -->
+                </div>
+            </div>
+        </div>
     </div>
 
     <script>
-        // Tải nội dung từ navbar.html
         fetch('navbar.html')
             .then(response => response.text())
             .then(data => {

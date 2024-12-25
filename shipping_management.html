@@ -10,10 +10,74 @@
     <div id="navbar"></div>
 
     <div class="container mt-4">
-        <h1>Quản Lý Đơn Gửi</h1>
+        <h1 class="mb-4">Quản Lý Đơn Gửi</h1>
+        
+        <!-- Table -->
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped table-hover">
+                <thead class="table-primary">
+                    <tr>
+                        <th scope="col">STT</th>
+                        <th scope="col">DVVC</th>
+                        <th scope="col">Loại</th>
+                        <th scope="col">SL SP</th>
+                        <th scope="col">Số Đơn</th>
+                        <th scope="col">Đơn Đã Gửi HVC</th>
+                        <th scope="col">Đơn Chưa Lấy</th>
+                        <th scope="col">Đơn Đang Chuyển</th>
+                        <th scope="col">Đơn Hủy</th>
+                        <th scope="col">Đơn Thành Công</th>
+                        <th scope="col">Đơn Hoàn</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Ninjavan</td>
+                        <td>Lonatech Store E-Commerce<br></td>
+                        <td>5</td>
+                        <td>5</td>
+                        <td>5</td>
+                        <td>0</td>
+                        <td>29</td>
+                        <td>0</td>
+                        <td>5</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>LEX</td>
+                        <td>Lonatech Store E-Commerce<br></td>
+                        <td>84</td>
+                        <td>79</td>
+                        <td>29</td>
+                        <td>48</td>
+                        <td>1</td>
+                        <td>29</td>
+                        <td>1</td>
+                        <td>0</td>
+                    </tr>
+                    <!-- Add more rows as needed -->
+                </tbody>
+                <tfoot class="table-secondary">
+                    <tr>
+                        <th colspan="3" class="text-end">Tổng</th>
+                        <th>89</th>
+                        <th>84</th>
+                        <th>34</th>
+                        <th>48</th>
+                        <th>30</th>
+                        <th>29</th>
+                        <th>6</th>
+                        <th>0</th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
     </div>
 
     <script>
+        // Load the navbar dynamically
         fetch('navbar.html')
             .then(response => response.text())
             .then(data => {
@@ -24,4 +88,4 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"></script>
 </body>
-</html> 
+</html>

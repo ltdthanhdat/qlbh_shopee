@@ -24,12 +24,19 @@
                     <input type="text" class="form-control" placeholder="Item ID">
                     <input type="text" class="form-control" placeholder="Tên sản phẩm">
                     <button class="btn btn-primary">Tìm kiếm</button>
+                
                 </div>
+                  <!-- Checkbox Filters -->
+   
             </div>
             <div class="col-md-4 text-end">
                 <button class="btn btn-danger me-2" id="deleteButton" style="display: none;">
                     <i class="bi bi-trash"></i> Xóa
                 </button>
+                <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#mergeProductModal">
+                    <i class="bi bi-arrow-repeat"></i> Ghép sản phẩm
+                </button>
+
                 <button class="btn btn-success">
                     <i class="bi bi-arrow-repeat"></i> Đồng bộ
                 </button>
@@ -43,9 +50,9 @@
                     <tr>
                         <th><input type="checkbox"></th>
                         <th>Ảnh</th>
-                        <th>Item id</th>
-                        <th>Sản phẩm</th>
-                        <th>Giá bán</th>
+                        <th>Item id (shopee)</th>
+                        <th>Sản phẩm (shopee)</th>
+                        <th>Giá bán (shopee)</th>
                         <th>SL</th>
                         <th>Sản phẩm</th>
                         <th>Giá bán</th>
@@ -109,6 +116,86 @@
             </table>
         </div>
     </div>
+<!-- Ghép Sản Phẩm Modal -->
+<div class="modal fade" id="mergeProductModal" tabindex="-1" aria-labelledby="mergeProductModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="mergeProductModalLabel">Ghép Sản Phẩm</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Vui lòng chọn shop và sản phẩm để ghép.</p>
+
+                <!-- Bảng danh sách sản phẩm -->
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th><input type="checkbox" id="selectAllProducts"></th>
+                            <th>Ảnh</th>
+                            <th>Tên sản phẩm</th>
+                            <th>Chọn Shop</th>
+                        </tr>
+                    </thead>
+                    <tbody id="mergeProductTableBody">
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td><img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-ly4w8urcwpsx9f@resize_w900_nl.webp" width="50" height="50"></td>
+                            <td>Cáp sạc nhanh Remax RC-192i chuẩn PD 20W Max</td>
+                            <td>
+                                <select class="form-select shop-dropdown">
+                                    <option value="Lonatech Store">Lonatech Store</option>
+                                    <option value="TechZone Store">TechZone Store</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td><img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lziu5uupkzoh5b.webp" width="50" height="50"></td>
+                            <td>Củ sạc Anker A2637 Nano Pro 20w</td>
+                            <td>
+                                <select class="form-select shop-dropdown">
+                                    <option value="Lonatech Store">Lonatech Store</option>
+                                    <option value="TechZone Store">TechZone Store</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td><img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lyv0abet52kted@resize_w900_nl.webp" width="50" height="50"></td>
+                            <td>Sạc nhanh Samsung 35W USB-C</td>
+                            <td>
+                                <select class="form-select shop-dropdown">
+                                    <option value="Lonatech Store">Lonatech Store</option>
+                                    <option value="TechZone Store">TechZone Store</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td><img src="https://down-vn.img.susercontent.com/file/vn-11134207-7ras8-m3ugn9dex3c109.webp" width="50" height="50"></td>
+                            <td>Củ sạc USB-C Power Delivery 65W Gan Tech</td>
+                            <td>
+                                <select class="form-select shop-dropdown">
+                                    <option value="Lonatech Store">Lonatech Store</option>
+                                    <option value="TechZone Store">TechZone Store</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                <button type="button" class="btn btn-primary">Xác nhận ghép</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
 
     <script>
         document.getElementById('shopSelect').addEventListener('change', function() {
