@@ -11,9 +11,120 @@
 
     <div class="container mt-4">
         <h1>Quản Lý Hóa Đơn</h1>
+
+        <!-- Action Buttons -->
+        <div class="row mt-4">
+            <div class="col-md-8">
+                <div class="input-group">
+                    <select class="form-select" style="max-width: 180px;">
+                        <option value="all">Tất cả Shop</option>
+                        <option value="Lonatech Store">Lonatech Store</option>
+                        <option value="TechZone Store">TechZone Store</option>
+                    </select>
+                    <input type="text" class="form-control" placeholder="Mã đơn hàng">
+                    <input type="text" class="form-control" placeholder="Tên khách hàng">
+                    <button class="btn btn-primary">Tìm kiếm</button>
+                </div>
+            </div>
+            <div class="col-md-4 text-end">
+                <button class="btn btn-success me-2">
+                    <i class="bi bi-download"></i> Xuất Excel
+                </button>
+                <button class="btn btn-info">
+                    <i class="bi bi-printer"></i> In hóa đơn
+                </button>
+            </div>
+        </div>
+
+        <!-- Invoices Table -->
+        <div class="table-responsive mt-4">
+            <table class="table table-bordered table-hover">
+                <thead class="table-light">
+                    <tr>
+                        <th><input type="checkbox"></th>
+                        <th>Mã đơn hàng</th>
+                        <th>Ngày tạo</th>
+                        <th>Khách hàng</th>
+                        <th>Shop</th>
+                        <th>Tổng tiền</th>
+                        <th>Trạng thái</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>HD001</td>
+                        <td>15/03/2024</td>
+                        <td>Nguyễn Văn A</td>
+                        <td>Lonatech Store</td>
+                        <td>590.000đ</td>
+                        <td><span class="badge bg-success">Đã thanh toán</span></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>HD002</td>
+                        <td>15/03/2024</td>
+                        <td>Trần Thị B</td>
+                        <td>TechZone Store</td>
+                        <td>890.000đ</td>
+                        <td><span class="badge bg-success">Đã thanh toán</span></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>HD003</td>
+                        <td>14/03/2024</td>
+                        <td>Phạm Văn C</td>
+                        <td>Lonatech Store</td>
+                        <td>450.000đ</td>
+                        <td><span class="badge bg-success">Đã thanh toán</span></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>HD004</td>
+                        <td>14/03/2024</td>
+                        <td>Lê Thị D</td>
+                        <td>TechZone Store</td>
+                        <td>750.000đ</td>
+                        <td><span class="badge bg-success">Đã thanh toán</span></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>HD005</td>
+                        <td>13/03/2024</td>
+                        <td>Hoàng Văn E</td>
+                        <td>Lonatech Store</td>
+                        <td>290.000đ</td>
+                        <td><span class="badge bg-success">Đã thanh toán</span></td>
+                    </tr>
+                </tbody>
+                <tfoot class="table-light">
+                    <tr>
+                        <td colspan="5" class="text-end"><strong>Tổng cộng:</strong></td>
+                        <td><strong>2.970.000đ</strong></td>
+                        <td></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <!-- Pagination -->
+        <nav aria-label="Page navigation" class="mt-4">
+            <ul class="pagination justify-content-center">
+                <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1">Trước</a>
+                </li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#">Sau</a>
+                </li>
+            </ul>
+        </nav>
     </div>
 
     <script>
+        // Load navbar
         fetch('navbar.html')
             .then(response => response.text())
             .then(data => {

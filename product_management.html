@@ -24,23 +24,20 @@
                     <input type="text" class="form-control" placeholder="Item ID">
                     <input type="text" class="form-control" placeholder="Tên sản phẩm">
                     <button class="btn btn-primary">Tìm kiếm</button>
-                
                 </div>
-                  <!-- Checkbox Filters -->
-   
             </div>
             <div class="col-md-4 text-end">
                 <button class="btn btn-danger me-2" id="deleteButton" style="display: none;">
                     <i class="bi bi-trash"></i> Xóa
                 </button>
-                <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#mergeProductModal">
+                <button class="btn btn-success me-2" data-bs-toggle="modal" data-bs-target="#mergeProductModal">
                     <i class="bi bi-arrow-repeat"></i> Ghép sản phẩm
                 </button>
-
-                <button class="btn btn-success">
+                <button class="btn btn-success me-2">
                     <i class="bi bi-arrow-repeat"></i> Đồng bộ
                 </button>
-            </div>
+                <a href="product_list.html" class="btn btn-info">Sản phẩm chưa ghép</a>
+                </button>
         </div>
 
         <!-- Products Table -->
@@ -50,7 +47,7 @@
                     <tr>
                         <th><input type="checkbox"></th>
                         <th>Ảnh</th>
-                        <th>Item id (shopee)</th>
+                        <th>Sku | Item id (shopee)</th>
                         <th>Sản phẩm (shopee)</th>
                         <th>Giá bán (shopee)</th>
                         <th>SL</th>
@@ -66,7 +63,7 @@
                         <td><input type="checkbox"></td>
                         <td><img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-ly4w8urcwpsx9f@resize_w900_nl.webp" width="50" height="50"></td>
                         <td>rc192i - trang<br>16695386803<br>(186899938540)<br><strong>(Lonatech Store)</strong></td>
-                        <td>Cáp sạc nhanh Remax RC-192i chuẩn PD 20W Max đầu cáp gập 90 độ chuyên game công ai phôn tích hợp đèn led - Trắng</td>
+                        <td>Cáp sạc nhanh Remax RC-192i chuẩn PD 20W Max đầu cáp gập 90 độ chuyên game công ai phôn t��ch hợp đèn led - Trắng</td>
                         <td>59.000</td>
                         <td>1</td>
                         <td>(rc192i)<br>Cáp sạc Remax C to Lightning RC 192i</td>
@@ -134,6 +131,7 @@
                             <th><input type="checkbox" id="selectAllProducts"></th>
                             <th>Ảnh</th>
                             <th>Tên sản phẩm</th>
+                            <th>Số lượng</th>
                             <th>Chọn Shop</th>
                         </tr>
                     </thead>
@@ -142,6 +140,15 @@
                             <td><input type="checkbox"></td>
                             <td><img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-ly4w8urcwpsx9f@resize_w900_nl.webp" width="50" height="50"></td>
                             <td>Cáp sạc nhanh Remax RC-192i chuẩn PD 20W Max</td>
+                            <td>
+                                <select class="form-select form-select-sm" style="width: 80px;">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </td>
                             <td>
                                 <select class="form-select shop-dropdown">
                                     <option value="Lonatech Store">Lonatech Store</option>
@@ -154,27 +161,14 @@
                             <td><img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lziu5uupkzoh5b.webp" width="50" height="50"></td>
                             <td>Củ sạc Anker A2637 Nano Pro 20w</td>
                             <td>
-                                <select class="form-select shop-dropdown">
-                                    <option value="Lonatech Store">Lonatech Store</option>
-                                    <option value="TechZone Store">TechZone Store</option>
+                                <select class="form-select form-select-sm" style="width: 80px;">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
                                 </select>
                             </td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td><img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lyv0abet52kted@resize_w900_nl.webp" width="50" height="50"></td>
-                            <td>Sạc nhanh Samsung 35W USB-C</td>
-                            <td>
-                                <select class="form-select shop-dropdown">
-                                    <option value="Lonatech Store">Lonatech Store</option>
-                                    <option value="TechZone Store">TechZone Store</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td><img src="https://down-vn.img.susercontent.com/file/vn-11134207-7ras8-m3ugn9dex3c109.webp" width="50" height="50"></td>
-                            <td>Củ sạc USB-C Power Delivery 65W Gan Tech</td>
                             <td>
                                 <select class="form-select shop-dropdown">
                                     <option value="Lonatech Store">Lonatech Store</option>
